@@ -31,17 +31,13 @@ function App() {
   }
   return (
     <ThemeProvider theme={theme}>
-      {/* <CssBaseline /> */}
+      <CssBaseline />
       <Header darkMode={darkMode} handleThemeChange={handleThemeChange} />
       <Container>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/catlog" element={<Catlog />}>
-            <Route
-              path="/catlog/id"
-              element={<ProductDetails></ProductDetails>}
-            />
-          </Route>
+          <Route path="/catlog" element={<Catlog />} />
+          <Route path="/catlog/:id" element={<ProductDetails />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
